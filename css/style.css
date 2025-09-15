@@ -1,0 +1,95 @@
+
+body{
+
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  
+}
+
+
+header{
+
+  
+ background-color: rgb(30, 98, 215);   
+ box-shadow: 0 3px 5px  rgb(42, 44, 47); 
+}
+
+header nav{
+
+ display: flex;
+ justify-content: space-between;
+ margin: 0 70px; 
+ 
+}
+
+header nav div{
+
+   display: flex;
+   align-items: center; 
+   gap: 20px;
+
+}
+
+
+header nav div a{
+
+text-decoration: none;
+color: rgb(225, 235, 240);    
+
+}
+
+a:hover{
+ 
+color: rgb(118, 9, 116);    
+}
+
+
+#logo{
+
+ height: 90px;
+
+}
+
+#contador-carrito{
+
+   background-color: rgb(235, 231, 231);
+   border-radius: 8px;
+   color: black;
+   display: inline-block;
+   height: 25px;
+   line-height: 25px;
+   aspect-ratio: 1;
+   text-align: center;
+       
+   
+}
+
+
+footer{
+
+ margin-top: auto;  
+ text-align: center;
+ box-shadow: 0 -3px 5px  rgb(42, 44, 47);
+    
+}
+
+button{
+
+ background-color:rgb(30, 141, 215) ;  
+ color:antiquewhite;
+ padding: 5px 10px;
+ border-radius: 8px;
+ cursor: pointer;
+}
+
+button:hover{
+
+  background-color: rgb(37, 99, 59);
+  box-shadow: 0 3px 5px  rgb(42, 44, 47)
+}
+
+.unidadesvacias{
+
+  display: none;
+}
