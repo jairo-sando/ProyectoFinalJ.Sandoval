@@ -4,6 +4,7 @@ const contenedorTarjetas = document.getElementById("productos-container");
 
 
 function crearTarjetasProductos(productos){
+  contenedorTarjetas.innerHTML = "";
   productos.forEach( producto => {
    const nuevoVehiculo = document.createElement ("div");
    nuevoVehiculo.classList = "tarjeta-producto"; 
@@ -13,7 +14,7 @@ function crearTarjetasProductos(productos){
      <p> $${producto.precio} </p>
      <p> ${producto.descripcion} </p>
      <button> Agregar al Carrito </button>
-    `
+    `;
    contenedorTarjetas.appendChild(nuevoVehiculo);
    
    nuevoVehiculo.querySelector("button")
@@ -25,3 +26,18 @@ function crearTarjetasProductos(productos){
 }
 
 crearTarjetasProductos(vehiculos);
+
+const linkAutos = document.querySelector('a[href="#autos"]');
+const linkMotos = document.querySelector('a[href="#motos"]');
+
+linkAutos.addEventListener("click", (e) => {
+  e.preventDefault();
+  const autos = vehiculos.filter(v => v.categoria === "Autos");
+  crearTarjetasProductos(autos);
+});
+
+linkMotos.addEventListener("click", (e) => {
+  e.preventDefault();
+  const motos = vehiculos.filter(v => v.categoria === "Motocicletas");
+  crearTarjetasProductos(motos);
+});
