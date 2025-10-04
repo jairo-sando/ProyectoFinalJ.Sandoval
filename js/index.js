@@ -38,17 +38,21 @@ function crearTarjetasProductos(productos){
 
 const linkAutos = document.querySelector('a[href="#autos"]');
 const linkMotos = document.querySelector('a[href="#motos"]');
+const banner = document.querySelector('.banner');
 
 linkAutos.addEventListener("click", (e) => {
   e.preventDefault();
   const autos = vehiculos.filter(v => v.categoria === "Autos");
   crearTarjetasProductos(autos);
+  banner.style.display = "none";
 });
 
 linkMotos.addEventListener("click", (e) => {
   e.preventDefault();
   const motos = vehiculos.filter(v => v.categoria === "Motocicletas");
   crearTarjetasProductos(motos);
+  banner.style.display = "none";
+
 });
 
 
