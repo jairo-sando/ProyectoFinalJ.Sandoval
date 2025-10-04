@@ -158,7 +158,19 @@ confirmarCompraElement.addEventListener ("click", ()=> {
         "¡Reserva realizada, en breve nos contactaremos para confirmar la misma!",
         `Desde: ${result.value.fechaDesde} <br> Hasta: ${result.value.fechaHasta}`,
         "success"
-      );
+      ).then (()=>{
+        //Vaciar Carrito y reiniciar totales.
+       localStorage.removeItem("vehiculos");
+       crearTarjetasProductos();
+       actualizaTotales();
+       actualizarNumeroCarrito();
+
+       //Redirigir al inicio de la página nuevamente
+       setTimeout(() => {
+         window.location.href = "index.html";
+       }, 2500);
+
+      });
     }
   });
 });

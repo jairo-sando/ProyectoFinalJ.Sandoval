@@ -34,7 +34,7 @@ function crearTarjetasProductos(productos){
 
 }
 
-//crearTarjetasProductos(vehiculos);
+//crearTarjetasProductos(vehiculos)
 
 const linkAutos = document.querySelector('a[href="#autos"]');
 const linkMotos = document.querySelector('a[href="#motos"]');
@@ -50,3 +50,29 @@ linkMotos.addEventListener("click", (e) => {
   const motos = vehiculos.filter(v => v.categoria === "Motocicletas");
   crearTarjetasProductos(motos);
 });
+
+
+// Funcionamiento Carousel
+
+const images = document.querySelector('.carousel-images');
+const dots = document.querySelectorAll('.dot');
+
+  let index = 0;
+
+    function showSlide(i) {
+      index = (i + 3) % 3; 
+      images.style.transform = `translateX(${-index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[index].classList.add('active');
+    }
+
+    document.querySelector('.next').addEventListener('click', () => showSlide(index + 1));
+    document.querySelector('.prev').addEventListener('click', () => showSlide(index - 1));
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+
+    
+      
+
