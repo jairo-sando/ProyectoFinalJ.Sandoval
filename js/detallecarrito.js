@@ -168,7 +168,7 @@ confirmarCompraElement.addEventListener ("click", ()=> {
        //Redirigir al inicio de la página nuevamente
        setTimeout(() => {
          window.location.href = "index.html";
-       }, 2500);
+       }, 1500);
 
       });
     }
