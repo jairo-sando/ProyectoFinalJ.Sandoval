@@ -32,6 +32,7 @@ function sumarAlCarrito(producto) {
 
   actualizarNumeroCarrito();
   return cuenta;
+  
 }
 
 
@@ -55,8 +56,25 @@ function restarAlCarrito (producto){
 
 
 function getNuevoProductoMemory(producto) {
+  Toastify({
+  text: "Agregaste un nuevo vehiculo al carrito ",
+  duration: 3000,
+  newWindow: true,
+  close: true,
+  gravity: "top", // `top` or `bottom`
+  position: "left", // `left`, `center` or `right`
+  stopOnFocus: true, // Prevents dismissing of toast on hover
+  style: {
+    background:"linear-gradient(to right,  rgba(81, 134, 225, 1)",
+    borderRadius: "2rem",
+    boxShadow: "0 3px 5px  rgb(42, 44, 47)", 
+  },
+  onClick: function(){} // Callback after click
+}).showToast();
+
   const nuevoProducto = { ...producto, cantidad: 1 }; 
   return nuevoProducto;
+  
 }
 
 const cuentaCarritoElement = document.getElementById("contador-carrito"); 

@@ -1,3 +1,12 @@
+let vehiculos= [];
+
+fetch ("./js/vehiculos.json")
+   .then(response => response.json())
+   .then(data => {
+     vehiculos = data; 
+     crearTarjetasProductos(vehiculos);
+
+   })
 
 const contenedorTarjetas = document.getElementById("productos-container");
 
@@ -11,7 +20,7 @@ function crearTarjetasProductos(productos){
    nuevoVehiculo.innerHTML = 
    ` <img src= "${producto.img}" alt="${producto.nombre}">
      <h3>${producto.nombre} </h3>
-     <p> $${producto.precio} </p>
+     <p> $${producto.precio} (Por día) </p>
      <p> ${producto.descripcion} </p>
      <button> Agregar al Carrito </button>
     `;
@@ -25,7 +34,7 @@ function crearTarjetasProductos(productos){
 
 }
 
-crearTarjetasProductos(vehiculos);
+//crearTarjetasProductos(vehiculos);
 
 const linkAutos = document.querySelector('a[href="#autos"]');
 const linkMotos = document.querySelector('a[href="#motos"]');

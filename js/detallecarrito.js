@@ -5,6 +5,7 @@ const precioElement = document.getElementById ("precio");
 const carritoVacioElement = document.getElementById ("carrito-vacio");
 const totalesElement = document.getElementById ("totales"); 
 const reinicarCarritoElement = document.getElementById ("reiniciar-carrito");
+const confirmarCompraElement = document.getElementById ("confirmar-compra");
 
 function crearTarjetasProductos() {
   contenedorTarjetas.innerHTML = "";
@@ -75,6 +76,12 @@ function actualizaTotales (){
 
     unidadesElement.innerText = unidades;
     precioElement.innerText = precio; 
+
+  } else {
+
+    unidadesElement.innerText = 0;
+    precioElement.innerText = 0;
+
   }
 
    MensajeVacio(); 
@@ -94,8 +101,64 @@ MensajeVacio();
 reinicarCarritoElement.addEventListener("click", reiniciarCarrito);
 
 function reiniciarCarrito(){
-
-  localStorage.removeItem("vehiculos");
-  actualizaTotales ();
-  crearTarjetasProductos();
+  
+  Swal.fire({
+  title: "Confirmas que quieres eliminar los vehiculos elegidos ?",
+  icon: "warning",
+  showCancelButton: true,
+  confirmarButtonText: "Confirmar",
+  cancelButtonText: "Cancelar"
+  }).then ((result)=> {
+   if (result.isConfirmed) {
+     localStorage.removeItem("vehiculos");
+     actualizaTotales();
+     crearTarjetasProductos();
+     Swal.fire("Eliminado", "Tu carrito esta vacio", "success");
+    } 
+  });
 }
+
+confirmarCompraElement.addEventListener ("click", ()=> {
+  Swal.fire({
+    title: "Completa tus datos de reserva",
+    html: `
+      <input id="swal-nombre" class="swal2-input" placeholder="Nombre y Apellido">
+      <label style="display:block; text-align:left; margin-top:10px;">Fecha de Reserva:</label>
+      <input id="swal-fecha-desde" type="date" class="swal2-input" placeholder="Desde">
+      <input id="swal-fecha-hasta" type="date" class="swal2-input" placeholder="Hasta">
+      <input id="swal-contacto" type="tel" class="swal2-input" placeholder="Número de contacto">
+      <input id="swal-mail" type="email" class="swal2-input" placeholder="Correo electrónico">
+    `,
+    confirmButtonText: "Enviar Reserva",
+    showCancelButton: true,
+    cancelButtonText: "Cancelar",
+    preConfirm: () => {
+      const nombre = document.getElementById("swal-nombre").value;
+      const fechaDesde = document.getElementById("swal-fecha-desde").value;
+      const fechaHasta = document.getElementById("swal-fecha-hasta").value;
+      const contacto = document.getElementById("swal-contacto").value;
+      const mail = document.getElementById("swal-mail").value;
+
+      if (!nombre || !fechaDesde || !fechaHasta || !contacto || !mail) {
+        Swal.showValidationMessage("Por favor completa todos los campos");
+        return false;
+      }
+
+      if (new Date(fechaHasta) < new Date(fechaDesde)) {
+        Swal.showValidationMessage("La fecha 'hasta' no puede ser menor que la fecha 'desde'");
+        return false;
+      }
+
+      return { nombre, fechaDesde, fechaHasta, contacto, mail };
+    }
+  }).then((result) => {
+    if (result.isConfirmed) {
+      console.log("Datos de reserva:", result.value);
+      Swal.fire(
+        "¡Reserva realizada, en breve nos contactaremos para confirmar la misma!",
+        `Desde: ${result.value.fechaDesde} <br> Hasta: ${result.value.fechaHasta}`,
+        "success"
+      );
+    }
+  });
+});

@@ -11,6 +11,8 @@
     <script src="./js/vehiculos.js" defer></script>
     <script src="./js/funcionamientocarrito.js" defer></script>
     <script src="./js/detallecarrito.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    
     
 </head>
 <body>
@@ -19,8 +21,8 @@
         <a href="/index.html"> <img src="./img/Logo.png" id="logo" alt="logo">
         
          <div>
-          <a href="#">Autos</a>
-          <a href="#">Motocicletas</a>
+          <a href="index.html#autos">Autos</a>
+          <a href="index.html#motos">Motocicletas</a>
           <a href="/carrito.html"><img src="./img/carrito.png" width="90px" height="90px"  alt="carrito"><span id="contador-carrito">0</span></a>
  
          </div>
@@ -41,8 +43,8 @@
       
         <p>Total Unidades: <span id="unidades">0</span></p>
         <p>Total Precio: $ <span id="precio">0</span></p>
-         <button disabled>Terminar Compra</button>
-         <button id="reiniciar-carrito"> Reiniciar Carrito</button>
+         <button id="reiniciar-carrito"> Cancelar Compra</button>
+         <button id="confirmar-compra">Confirmar Compra</button>
 
       </section>
 

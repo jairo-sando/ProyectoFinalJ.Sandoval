@@ -1,0 +1,85 @@
+
+[
+
+ {
+    "id":1,
+   "nombre": "Chevrolet Joy",
+    "img": "./img/chevrolet_joy.png",
+    "precio": 50000,
+   "descripcion": "Chevrolet Joy 1.4 LS, Chevrolet Onix Primera Generación o similar. Caracteristicas: Aire Acondicionado, Dirección asistida, para 5 personas. ",
+    "categoria": "Autos"
+ },
+
+  {
+    "id":2,
+   "nombre": "Ducati Scramber Icon",
+    "img": "./img/ducati.png",
+    "precio": 15000,
+   "descripcion": "Cilindrada: 803, cc:72, Peso: 173kg Velocidad: 193 km/h, Manual",
+   "categoria": "Motocicletas"
+ },
+
+ {
+    "id":3,
+   "nombre": "Honda xr300",
+    "img": "./img/hondaxr300.png",
+    "precio": 20000,
+   "descripcion": "Cilindrada: 300, cc:26, Peso: 153kg, 259 mm, Velocidad: 134 km/h, Manual",
+   "categoria": "Motocicletas"
+ },
+
+ {
+    "id":4,
+   "nombre": "Kia Picanto",
+    "img": "./img/kia_picanto.png",
+    "precio": 30000,
+   "descripcion": "Kia Picanto 1.0, Fiat Mobi 1.0, Renault Kwid 1.0 o similar. Caracteristicas: Aire Acondicionado, Dirección asistida, para 5 personas.",
+   "categoria": "Autos"
+ },
+
+ {
+    "id":5,
+   "nombre": "Renaul Duster 1.3 ",
+    "img": "./img/renaul_duster.png",
+    "precio": 60000,
+   "descripcion": "Renault Duster 1.3 o similar. Caracteristicas: Aire Acondicionado, Eleva vidrios eléctricos, caben 2 maletas grandes+ 1 pequeña en el baúl, para 5 personas. ",
+   "categoria": "Autos"
+ },
+
+ {
+    "id":6,
+   "nombre": "Renaul Duster Oroch 1.6",
+    "img": "./img/renaul_duster2.png",
+    "precio": 60000,
+   "descripcion": "Renault Duster Oroch 1.6 o similar. Caracteristicas: Aire Acondicionado, Eleva vidrios eléctricos, 4x4, para 5 personas.",
+   "categoria": "Autos"
+ },
+
+  {
+    "id":7,
+   "nombre": "Renaul Alaskan",
+    "img": "./img/renault_alaskan.png",
+    "precio": 70000,
+   "descripcion": "Renault Alaskan 2.5, Volkswagen Amarok 2.0 o similar. Caracteristicas: Aire Acondicionado, Eleva vidrios eléctricos, 4x4, Dirección asistida, cierre centralizado, para 5 personas. ",
+   "categoria": "Autos"
+ },
+
+  {
+    "id":8,
+   "nombre": "Royal Himalayan 411",
+    "img": "./img/royalhimalayan411.png",
+    "precio": 25000,
+   "descripcion": "Cilindrada: 411, cc24, Peso: 199kg, 220 mm, Velocidad: 120 km/h, Manual.",
+   "categoria": "Motocicletas"
+ },
+
+  {
+    "id":9,
+   "nombre": "Subaru Evoltis",
+    "img": "./img/subaru_evoltis.png",
+    "precio": 25000,
+   "descripcion": "Subaru Evoltis 2.4 AT, Trailblazer LTZ 3.6 o similar. Caracteristicas: Aire Acondicionado, Eleva vidrios eléctricos, 4x4, Dirección asistida, cierre centralizado, caben 2 maletas pequeñas y 2 maletas grandes, para 7 personas. ",
+   "categoria": "Autos"
+ }
+
+]
